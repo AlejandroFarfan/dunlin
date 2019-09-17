@@ -1,0 +1,26 @@
+
+service: imagecreator
+# app and org for use with dashboard.serverless.com
+app: myapp
+org: alejandrofarfan
+
+custom:
+  bucket: screenshot-bucket-dsb
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  hello:
+    handler: handler.hello
+    environment:
+      BUCKET: ${self:custom.bucket}
+
+plugins:
+  - serverless-plugin-chrome
