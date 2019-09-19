@@ -1,10 +1,10 @@
 const launchChrome = require("@serverless-chrome/lambda");
 const request = require("superagent");
 
-const getChrome = async () => {
-    const chrome = await launchChrome();
+const getChrome = () => {
+    const chrome = launchChrome();
 
-    const response = await request
+    const response = request
         .get(`${chrome.url}/json/version`)
         .set("Content-Type", "application/json");
 
