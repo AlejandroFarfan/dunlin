@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.529.0",
-    "puppeteer-core": "^1.20.0"
+    "puppeteer-core": "^1.20.0",
+    "superagent": "^5.1.0"
   },
   "devDependencies": {
     "chrome-launcher": "^0.11.2",

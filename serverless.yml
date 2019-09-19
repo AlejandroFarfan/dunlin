@@ -11,14 +11,17 @@ custom:
       Action:
         - s3:PutObject
       Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+  
 
 provider:
   name: aws
   runtime: nodejs8.10
+  memorySize: 1536
 
 functions:
-  hello:
-    handler: handler.hello
+  takeScreenshot:
+    handler: handler.takeScreenshot
+          
     environment:
       BUCKET: ${self:custom.bucket}
 
