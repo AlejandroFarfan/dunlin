@@ -27,3 +27,9 @@ functions:
 
 plugins:
   - serverless-plugin-chrome
+
+package:
+  exclude:
+    - node_modules/puppeteer/.local-chromium/** # exlude puppeteer chrome if exists
+
+
